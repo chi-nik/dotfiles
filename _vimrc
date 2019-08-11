@@ -5,23 +5,25 @@ behave mswin
 " Vundle shit 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
-call vundle#begin('$HOME/vimfiles/bundle/')
+" set rtp+=$HOME/vimfiles/bundle/Vundle.vim/ <- can delete
+" call vundle#begin('$HOME/vimfiles/bundle/') <- can delete
 "
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim' 
+" Plugin 'VundleVim/Vundle.vim' <- can delete
+call plug#begin('$HOME/vimfiles/plugged')
 
 " Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
-Plugin 'python-mode/python-mode'
-Plugin 'vimwiki/vimwiki'
-Plugin 'tpope/vim-surround' 
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'vim-airline/vim-airline'
+Plug 'python-mode/python-mode'
+Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-surround' 
+Plug 'terryma/vim-multiple-cursors'
 " Plugin 'davidhalter/jedi-vim'
 
+call plug#end()
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" call vundle#end()            " required <- can delete
+" filetype plugin indent on    " required <- can delete
 
 
 
