@@ -1,31 +1,7 @@
+if !has('unix') " Windows dependent code
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
-"
-" Vundle shit 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-" set rtp+=$HOME/vimfiles/bundle/Vundle.vim/ <- can delete
-" call vundle#begin('$HOME/vimfiles/bundle/') <- can delete
-"
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim' <- can delete
-call plug#begin('$HOME/vimfiles/plugged')
-
-" Plugin 'w0rp/ale'
-Plug 'vim-airline/vim-airline'
-Plug 'python-mode/python-mode'
-Plug 'vimwiki/vimwiki'
-Plug 'tpope/vim-surround' 
-Plug 'terryma/vim-multiple-cursors'
-" Plugin 'davidhalter/jedi-vim'
-
-call plug#end()
-
-" call vundle#end()            " required <- can delete
-" filetype plugin indent on    " required <- can delete
-
-
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -56,12 +32,27 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
+endif
+
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+call plug#begin('$HOME/vimfiles/plugged') 
+" Plugin 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'python-mode/python-mode'
+Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-surround' 
+Plug 'terryma/vim-multiple-cursors'
+" Plugin 'davidhalter/jedi-vim'
+
+call plug#end()
 
 " MY SHIT BEGGINS HERE
 colorscheme desert
 set enc=utf-8
-
-" execute pathogen#infect()
 
 set belloff=all 
 set guifont=Courier_New:h10:cANSI:qDRAFT
