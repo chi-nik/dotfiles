@@ -48,6 +48,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-surround' 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jnurmine/Zenburn'
+Plug 'tpope/vim-fugitive'
 " Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
