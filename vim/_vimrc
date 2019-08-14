@@ -37,7 +37,8 @@ endif
 
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype plugin on            " required
+syntax on
 
 call plug#begin('$HOME/vimfiles/plugged') 
 " Plugin 'w0rp/ale'
@@ -46,12 +47,16 @@ Plug 'python-mode/python-mode'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-surround' 
 Plug 'terryma/vim-multiple-cursors'
+Plug 'jnurmine/Zenburn'
 " Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
 
 " MY SHIT BEGGINS HERE
-colorscheme desert
+
+"colorscheme desert 
+colorscheme zenburn
+
 set enc=utf-8
 
 set belloff=all 
