@@ -49,9 +49,12 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jnurmine/Zenburn'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'easymotion/vim-easymotion'
 " Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
+let g:vimwiki_list = [{}, {'path': '/home/nikita/projects/Fedor/doc','path_html': '/home/nikita/projects/Fedor/doc/html_parse'}] 
 
 " MY SHIT BEGGINS HERE
 
