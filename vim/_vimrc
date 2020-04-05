@@ -54,9 +54,18 @@ Plug 'easymotion/vim-easymotion'
 " Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
-let g:vimwiki_list = [{}, {'path': '/home/nikita/projects/Fedor/doc','path_html': '/home/nikita/projects/Fedor/doc/html_parse'}] 
 
 " MY SHIT BEGGINS HERE
+
+" VimWiki config
+let g:vimwiki_list = [{'path': '~/GD/SyncedShare/MegaPedia'},{}, {'path': '~/projects/Fedor/doc','path_html': '~/projects/Fedor/doc/html_parse'}] 
+au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal nobackup
+au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal noundofile
+au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal noswapfile
+au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal nowritebackup
+au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal cm=blowfish2
+au BufEnter */SyncedShare/MegaPedia/diary/*.wiki if empty(&key) | :X | endif 
+
 
 "colorscheme desert 
 colorscheme zenburn
