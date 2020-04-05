@@ -51,7 +51,10 @@ Plug 'jnurmine/Zenburn'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion'
-" Plugin 'davidhalter/jedi-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
+"Plug 'JBakamovic/cxxd-vim' 
+"Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
 let g:vimwiki_list = [{}, {'path': '/home/nikita/projects/Fedor/doc','path_html': '/home/nikita/projects/Fedor/doc/html_parse'}] 
@@ -64,5 +67,9 @@ colorscheme zenburn
 set enc=utf-8
 
 set belloff=all 
-set guifont=Courier_New:h10:cANSI:qDRAFT
 
+if !has('unix') " Windows dependent code
+set guifont=Courier_New:h10:cANSI:qDRAFT
+else
+set guifont=Inconsolata\ 12
+endif
