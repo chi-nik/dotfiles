@@ -46,7 +46,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'python-mode/python-mode'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-surround' 
+Plug 'tpope/vim-obsession' 
 Plug 'terryma/vim-multiple-cursors'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+" Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
@@ -69,7 +74,6 @@ au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal nowritebackup
 au BufEnter */SyncedShare/MegaPedia/diary/*.wiki setlocal cm=blowfish2
 au BufEnter */SyncedShare/MegaPedia/diary/*.wiki if empty(&key) | :X | endif 
 
-
 "colorscheme desert 
 colorscheme zenburn
 
@@ -82,3 +86,11 @@ set guifont=Courier_New:h10:cANSI:qDRAFT
 else
 set guifont=Inconsolata\ 12
 endif
+
+set hlsearch
+set ignorecase
+set tabstop=4
+set shiftwidth=4
+" Status line 
+set laststatus=2
+set statusline=%.40f%=%c%V,%l\ \ /%L\ (%p%%)
