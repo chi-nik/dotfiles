@@ -1,0 +1,12 @@
+#!/bin/bash
+
+add_code=true
+line_to_add="source ~/.bashrc_local" 
+while IFS= read -r line; do
+	[[ "${line}" == "$line_to_add" ]] && add_code=false
+	echo "${line}"
+done < /dev/stdin
+
+$add_code && echo "$line_to_add" 
+# Bug Hack: Add sleep, otherwise chezmoi returns and error
+sleep 1s
