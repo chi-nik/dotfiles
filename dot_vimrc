@@ -36,7 +36,7 @@ endif
 
 
 
-set nocompatible              " be iMproved, required
+set nocompatible              " required
 filetype plugin on            " required
 syntax on
 
@@ -54,15 +54,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'liuchengxu/vista.vim'
 "Plug 'JBakamovic/cxxd-vim' 
 "Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
-
+source ~/vimfiles/coc.vim 
 " MY SHIT BEGGINS HERE
 
 " VimWiki config
