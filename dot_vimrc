@@ -39,6 +39,9 @@ endif
 set nocompatible              " required
 filetype plugin on            " required
 syntax on
+let g:coc_config_home ='~/vimfiles/' 
+let g:coc_global_extensions = ['coc-vimlsp', 'coc-snippets@2.4.0', 'coc-sh', 'coc-json', 'coc-clangd', 'coc-cmake']
+
 
 call plug#begin('$HOME/vimfiles/plugged') 
 " Plugin 'w0rp/ale'
