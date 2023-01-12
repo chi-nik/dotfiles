@@ -73,4 +73,13 @@ if ! command -v node ; then
 	) || echo "node install failed" 
 fi
 
+# check neovim
+if ! command -v nvim ; then
+	(
+	wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -P ~/bin/
+	cd ~/bin
+	chmod u+x nvim.appimage
+	ln -s nvim.appimage nvim
+	) || echo "neovim install failed [❌]"
+fi
 {{ end -}}
