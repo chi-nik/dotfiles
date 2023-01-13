@@ -48,9 +48,11 @@ fi
 # check fzf 
 if ! command -v fzf ; then
 	( 
-	wget https://github.com/junegunn/fzf/releases/download/0.30.0/fzf-0.30.0-linux_amd64.tar.gz -P ~/Downloads/
+	wget https://github.com/junegunn/fzf/releases/download/0.35.1/fzf-0.35.1-linux_amd64.tar.gz -P ~/Downloads/
 	mkdir -p ~/bin/fzf-folder
-	tar xvfz ~/Downloads/fzf-0.30.0-linux_amd64.tar.gz -C ~/bin/fzf-folder	
+	tar xvfz ~/Downloads/fzf-0.35.1-linux_amd64.tar.gz -C ~/bin/fzf-folder	
+	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.bash -P ~/bin/fzf-folder
+	wget https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.bash -P ~/bin/fzf-folder
 	ln -s ~/bin/fzf-folder/fzf ~/bin/fzf
 	) || echo "fzf install failed"
 fi
