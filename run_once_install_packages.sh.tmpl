@@ -84,4 +84,19 @@ if ! command -v nvim ; then
 	ln -s nvim.appimage nvim
 	) || echo "neovim install failed [❌]"
 fi
+
+# check ranger
+if ! command -v ranger ; then
+	(
+	pip3 install --user ranger-fm
+	) || echo  "ranger install failed [❌]"
+fi
+if command -v ranger ; then
+	(
+	# check plugins are available
+	pip3 install -e ~/repos/ranger_tmux
+	python3 -m ranger_tmux install --no-tmux
+	) || echo  "ranger_tmux install failed [❌]"
+fi
+
 {{ end -}}
