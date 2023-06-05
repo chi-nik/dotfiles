@@ -45,8 +45,16 @@ endif
 set nocompatible              " required
 filetype plugin on            " required
 syntax on
-let g:coc_config_home ='~/vimfiles/' 
-let g:coc_global_extensions = ['coc-vimlsp', 'coc-snippets@2.4.0', 'coc-sh', 'coc-json', 'coc-clangd', 'coc-cmake']
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+	let g:coc_config_home ='~/vimfiles/' 
+	let g:coc_global_extensions = ['coc-vimlsp', 'coc-snippets@2.4.0', 'coc-sh', 'coc-json', 'coc-clangd', 'coc-cmake']
+else
+	set t_Co=256
+	let g:go_version_warning = 0
+	let g:coc_start_at_startup=0
+	let g:coc_disable_startup_warning = 1
+
+endif
 
 
 call plug#begin('$HOME/vimfiles/plugged') 
@@ -66,15 +74,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
+if has("nvim-0.5.0") || has("patch-8.1.1564")
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+endif
 Plug 'liuchengxu/vista.vim'
 "Plug 'JBakamovic/cxxd-vim' 
 "Plugin 'davidhalter/jedi-vim'
 
 call plug#end()
-source ~/vimfiles/coc.vim 
-" MY SHIT BEGGINS HERE
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+	source ~/vimfiles/coc.vim 
+endif
 
 " VimWiki config
 let g:vimwiki_list = [{'path': '~/GD/SyncedShare/MegaPedia'},{}, {'path': '~/projects/Fedor/doc','path_html': '~/projects/Fedor/doc/html_parse'}] 
