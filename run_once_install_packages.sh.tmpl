@@ -99,4 +99,11 @@ if command -v ranger ; then
 	) || echo  "ranger_tmux install failed [❌]"
 fi
 
+# zoxide
+if command -v zoxide ; then
+	(
+	curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+	) || echo  "zoxide install failed [❌]"
+fi
+
 {{ end -}}
