@@ -91,7 +91,7 @@ if ! command -v ranger ; then
 	pip3 install --user ranger-fm
 	) || echo  "ranger install failed [❌]"
 fi
-if command -v ranger ; then
+if  command -v ranger && ! pip3 show ranger_tmux; then
 	(
 	# check plugins are available
 	pip3 install -e ~/repos/ranger_tmux
