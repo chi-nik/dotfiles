@@ -100,8 +100,9 @@ if  command -v ranger && ! pip3 show ranger_tmux; then
 fi
 
 # zoxide
-if command -v zoxide ; then
+if ! command -v zoxide ; then
 	(
+	# might need proxy
 	curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 	) || echo  "zoxide install failed [❌]"
 fi
