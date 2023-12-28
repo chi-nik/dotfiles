@@ -1,10 +1,6 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-# Install vimplug
-[[ -f  ~/.vim/autoload/plug.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
-
 # Install Rg
 command -v rg || sudo apt install ripgrep
 
@@ -83,6 +79,24 @@ if ! command -v nvim ; then
 	chmod u+x nvim.appimage
 	ln -s nvim.appimage nvim
 	) || echo "neovim install failed [❌]"
+fi
+
+# Install vimplug
+if command -v vim && [[ ! -f  ~/.vim/autoload/plug.vim ]] ; then
+	(
+	echo "INSTALLING VIMPLUG for VIM"
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+
+	)
+fi
+if command -v nvim && [[ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim ]] ; then
+	(
+	echo "INSTALLING VIMPLUG for NeoVIM"
+	# Original is sh -c '<commad>'
+	curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	)
 fi
 
 # check ranger
