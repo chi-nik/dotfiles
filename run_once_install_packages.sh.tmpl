@@ -124,9 +124,9 @@ if ! command -v zoxide ; then
 fi
 
 # ranger-zoxide plugin
-if command -v ranger && command -v zoxide ; then
+if command -v ranger && command -v zoxide && [[ ! -d ~/.config/ranger/plugins/zoxide ]] ; then
 	(
-	[[ ! -d ~/.config/ranger/plugins/zoxide ]] && git clone https://github.com/jchook/ranger-zoxide.git ~/.config/ranger/plugins/zoxide
+	git clone https://github.com/jchook/ranger-zoxide.git ~/.config/ranger/plugins/zoxide
 	) || echo  "ranger-zoxide install failed [❌]"
 fi
 {{ end -}}
