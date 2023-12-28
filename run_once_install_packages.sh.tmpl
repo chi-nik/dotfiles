@@ -108,8 +108,10 @@ fi
 if  command -v ranger && ! pip3 show ranger_tmux; then
 	(
 	# check plugins are available
+
+	[[ ! -d ~/repos/ranger_tmux ]] && git clone https://github.com/chi-nik/ranger_tmux.git ~/repos/ranger_tmux
 	pip3 install -e ~/repos/ranger_tmux
-	python3 -m ranger_tmux install --no-tmux
+	python3 -m ranger_tmux --no-tmux install 
 	) || echo  "ranger_tmux install failed [❌]"
 fi
 
